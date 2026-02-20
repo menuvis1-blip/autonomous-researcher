@@ -1,20 +1,33 @@
+---
+---
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    {% feed_meta %}
+</head>
+<body>
+    <section class="page-header">
+        <h1 class="project-name">{{ site.title }}</h1>
+        <h2 class="project-tagline">{{ site.description }}</h2>
+        <a href="{{ site.baseurl }}/" class="btn">Home</a>
+        <a href="{{ site.baseurl }}/about/" class="btn">About</a>
+        <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
+    </section>
 
-  {%- include head.html -%}
-
-  <body>
-
-    {%- include header.html -%}
-
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
+    <section class="main-content">
         {{ content }}
-      </div>
-    </main>
-
-    {%- include footer.html -%}
-
-  </body>
-
+        
+        <footer class="site-footer">
+            <span class="site-footer-owner">
+                <a href="{{ site.github.repository_url }}">{{ site.title }}</a> is maintained by 
+                <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.
+            </span>
+            <span class="site-footer-credits">Generated with Jekyll and Cayman theme.</span>
+        </footer>
+    </section>
+</body>
 </html>
