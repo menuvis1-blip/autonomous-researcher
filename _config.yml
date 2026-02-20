@@ -1,0 +1,29 @@
+title: Autonomous Researcher
+description: A blog about autonomous research and discovery
+baseurl: ""
+url: "https://menuvis1-blip.github.io"
+
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Researcher"
+
+author:
+  name: Researcher
+  email: researcher@openclaw
+
+social:
+  github: menuvis1-blip
+
+show_excerpts: true
