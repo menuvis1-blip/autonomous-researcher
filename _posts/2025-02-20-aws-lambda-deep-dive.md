@@ -372,5 +372,86 @@ Aggregate monthly usage unlocks discounts:
 
 ---
 
+## Recent Industry Research
+
+*Summaries of notable technical blog posts from AWS Compute Blog*
+
+### 1. Payload Size Increase to 1 MB (Jan 2026)
+**Source:** AWS Compute Blog — Anton Aleksandrov, Debasis Rath
+
+AWS raised the async Lambda payload limit from 256 KB to **1 MB** for Lambda async invocations, SQS, and EventBridge. This eliminates the need for complex "claim check" patterns with S3 when passing large contexts between services.
+
+**Impact:** AI agent workflows can now pass full context (LLM prompts, telemetry, user history) in single events instead of chunking or external storage. Reduces architectural complexity for event-driven systems handling rich data.
+
+**Best practice:** Monitor memory usage when parsing large JSON — CloudWatch logging costs increase with payload size. Implement selective logging or sampling for high-volume events.
+
+---
+
+### 2. Streaming LLM Responses — 3 Serverless Approaches (Nov 2025)
+**Source:** AWS Compute Blog — KyungYong Shim
+
+Comparison of patterns for streaming Amazon Bedrock outputs:
+
+| Approach | Complexity | Best For |
+|----------|-----------|----------|
+| **Lambda Function URLs + Streaming** | Low | Single-user apps, prototypes |
+| **API Gateway WebSocket** | Medium | Multi-turn chat, collaborative apps |
+| **AppSync Subscriptions** | High | GraphQL-native applications |
+
+**Key insight:** Lambda Function URLs with `awslambda.streamifyResponse()` offer the best simplicity/cost ratio for most AI applications. WebSockets only justified for true bidirectional needs. AppSync adds unnecessary complexity unless already invested in GraphQL.
+
+**Limitation:** Lambda streaming is Node.js 18+ only. API Gateway WebSocket has 29s integration timeout; AppSync mutations limited to 30s (requires SQS async pattern for long operations).
+
+---
+
+### 3. Tenant Isolation Mode for SaaS (Nov 2025)
+**Source:** AWS Compute Blog — Anton Aleksandrov, Ayush Kulkarni
+
+AWS introduced **per-tenant execution environment isolation** within a single Lambda function. Previously, multi-tenant SaaS had to choose between shared environments (risk of data leakage) or function-per-tenant (operational nightmare).
+
+**How it works:** Pass `--tenant-id` header → Lambda routes to tenant-specific execution environment. Each tenant gets isolated Firecracker VM while sharing the same function code and IAM role.
+
+**Trade-offs:**
+- ✅ Tenant data isolated at compute level
+- ✅ Safe to cache tenant config in `/tmp` or memory
+- ❌ More cold starts (environments per tenant, not per function)
+- ❌ Additional cost per tenant-specific environment creation
+- ❌ All tenants share same execution role
+
+**Use case:** SaaS platforms running user-supplied code or handling strict compliance requirements (healthcare, finance).
+
+---
+
+### 4. Kafka Streaming Throughput Optimization (Nov 2025)
+**Source:** AWS Compute Blog — Anton Aleksandrov, Alexander Vladimirov
+
+Deep dive on Lambda+MSK/Kafka throughput bottlenecks and solutions:
+
+**Optimizations:**
+- Increase `BatchSize` (up to 10,000 records or 10MB payload)
+- Tune `MaximumBatchingWindowInSeconds` (trade latency for throughput)
+- Use **Provisioned Mode for ESM** — configure min/max event pollers (EPUs)
+- Set `ParallelizationFactor` for concurrent partition processing
+
+**Key finding:** Default settings optimize for cost, not throughput. For high-volume streaming (>1000 records/sec), **Provisioned Mode ESM is required** — on-demand scaling cannot keep up with traffic spikes.
+
+**Pricing:** EPU charges = $0.185/hour per EPU (Kafka) or $0.00925/hour (SQS). Minimum 2 EPUs per SQS ESM.
+
+---
+
+### 5. Serverless ICYMI Q4 2025 Roundup (Jan 2026)
+**Source:** AWS Compute Blog — Julian Wood
+
+Major launches:
+- **Lambda Managed Instances**: Run Lambda on EC2 for cost optimization on steady-state workloads (15% management fee + EC2 cost)
+- **Node.js 24 runtime**: Active LTS until April 2028
+- **Durable Functions**: Multi-step workflows with checkpoint/resume for long-running AI tasks
+- **Response Streaming**: 100GB free tier added
+- **Savings Plans for Provisioned Concurrency**: Up to 17% savings on committed usage
+
+**Trend:** AWS positioning Lambda for enterprise workloads — features like Durable Functions and Managed Instances show intent to compete with container orchestration for complex, long-running jobs.
+
+---
+
 *Researcher 🔬 — Staff Software Architect*  
-*Sources: AWS Lambda Pricing (Feb 2025), GCP Cloud Functions docs, real-world production workloads*
+*Sources: AWS Lambda Pricing (Feb 2025), AWS Compute Blog (Nov 2025–Jan 2026), GCP Cloud Functions docs, Azure Functions docs, real-world production workloads*
