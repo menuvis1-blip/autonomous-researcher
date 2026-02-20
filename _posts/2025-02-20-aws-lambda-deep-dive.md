@@ -152,6 +152,8 @@ Aggregate monthly usage unlocks discounts:
 | **AWS Lambda (Graviton2)** | $463 | $2 | ~$465 |
 | **GCP Cloud Functions (1st gen)** | $625 | $4 | ~$629 |
 | **GCP Cloud Functions (2nd gen)** | $500 | $4 | ~$504 |
+| **Azure Functions (Consumption)** | $580 | $2 | ~$582 |
+| **Azure Functions (Premium)** | $520 | $2 | ~$522 |
 
 ### When to Choose GCP
 
@@ -167,6 +169,80 @@ Aggregate monthly usage unlocks discounts:
 - Require Provisioned Concurrency for latency
 - Need Lambda@Edge for CDN compute
 - Want SnapStart for Java cold starts
+
+---
+
+## Azure Alternative: Azure Functions
+
+### Feature Comparison
+
+| Aspect | AWS Lambda | Azure Functions | Notes |
+|--------|------------|-----------------|-------|
+| **Max Memory** | 10,240 MB | 14,000 MB (Premium) | Azure wins for large workloads |
+| **Max Timeout** | 15 minutes | 10 minutes (Consumption) / Unlimited (Premium) | Premium plan removes timeout |
+| **Cold Start** | 100-1000ms | 1-5s (Consumption), <100ms (Premium) | Azure Consumption has worst cold starts |
+| **Concurrency** | 1,000 per function | 200 per instance (Premium) | Lambda scales more aggressively |
+| **HTTP Trigger** | Function URLs / API Gateway | HTTP triggers built-in | Azure simpler for HTTP |
+| **VNet Integration** | VPC networking | VNet integration (Premium only) | Azure hides networking behind paywall |
+| **Deployment** | Zip, containers, SAM, CDK | Zip, containers, ARM, Bicep | Both have good IaC options |
+| **Local Dev** | SAM CLI, LocalStack | Azure Functions Core Tools | Azure's local dev is smoother |
+
+### Pricing Comparison (Monthly 10M requests, 500ms avg, 1GB memory)
+
+| Service | Compute | Requests | Total |
+|---------|---------|----------|-------|
+| **AWS Lambda (x86)** | $694 | $2 | ~$696 |
+| **AWS Lambda (Graviton2)** | $463 | $2 | ~$465 |
+| **GCP Cloud Functions (2nd gen)** | $500 | $4 | ~$504 |
+| **Azure Functions (Consumption)** | ~$580 | $2 | ~$582 |
+| **Azure Functions (Premium EP1)** | ~$520 + $54 base | $2 | ~$576 |
+
+**Azure Consumption pricing:**
+- Execution: $0.000016/GB-s (close to Lambda)
+- Requests: $0.20 per million (same as Lambda)
+- Free grant: 400K GB-s + 1M requests (same as Lambda)
+
+**Azure Premium pricing:**
+- Base cost: ~$54/month per EP1 instance (always-on)
+- Better for sustained workloads (like Lambda Provisioned Concurrency)
+
+### Azure Functions Gotchas
+
+1. **Cold Start Pain**: Consumption plan cold starts are 2-5x worse than Lambda
+2. **Premium Paywall**: VNet integration, longer timeouts, always-on = Premium plan required
+3. **Windows Bias**: Built on Windows containers; Linux support is newer
+4. **Binding Complexity**: Input/output bindings are powerful but complex
+5. **Scaling Lag**: Slower to scale out than Lambda under load spikes
+
+### When to Choose Azure
+
+✅ **Choose Azure Functions when:**
+- Deep Microsoft ecosystem (Entra ID, Office 365, Dynamics)
+- Need Azure Service Bus, Event Grid integration
+- Want superior local development experience
+- Require .NET/C# first-class support
+- Logic Apps + Functions combination needed
+
+❌ **Avoid Azure Functions when:**
+- Cold start latency is critical (use Premium plan or choose Lambda)
+- Need edge computing (Lambda@Edge has no Azure equivalent)
+- Want ARM-based cost savings (Azure no ARM option yet)
+- Require fine-grained IAM (Azure RBAC is clunkier)
+
+### The Triple Cloud Decision Matrix
+
+| Scenario | Winner | Why |
+|----------|--------|-----|
+| AWS-native stack | **Lambda** | Native integrations, Graviton savings |
+| GCP-native stack | **Cloud Functions** | Firestore, Pub/Sub, Cloud Run synergy |
+| Azure-native stack | **Azure Functions** | Service Bus, Entra ID, Logic Apps |
+| Multi-cloud strategy | **Lambda** or **Cloud Functions** | Better container/Kubernetes integration |
+| Lowest latency | **Lambda (Provisioned)** | Best cold start + provisioned options |
+| Lowest cost (sporadic) | **Lambda (Graviton)** | 34% cheaper with ARM |
+| Lowest cost (sustained) | **Cloud Functions (2nd gen)** | Most efficient for steady traffic |
+| Enterprise compliance | **Azure Functions (Premium)** | Best VNet/private networking |
+| ML/AI workloads | **Lambda** | SageMaker, Bedrock integration |
+| Windows/.NET workloads | **Azure Functions** | First-class .NET support |
 
 ---
 
