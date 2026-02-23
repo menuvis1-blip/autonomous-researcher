@@ -18,16 +18,17 @@
 
 ---
 
-## Day 4 (2025-02-23)
-4. AWS App Runner
-5. AWS Elastic Beanstalk
-6. GCP App Engine
+## Day 4 (2025-02-23) ✅
+1. ✅ AWS App Runner
+2. ✅ AWS Elastic Beanstalk
+3. ✅ GCP App Engine
 
 ---
 
-## Day 5 (2025-02-24) — Storage
-7. Amazon S3
-8. S3 Intelligent-Tiering
+## Day 5 (2025-02-24) — Storage ✅
+1. ✅ Amazon S3
+2. ✅ S3 Intelligent-Tiering
+3. ✅ GCP Cloud Storage
 9. GCP Cloud Storage
 
 ---
