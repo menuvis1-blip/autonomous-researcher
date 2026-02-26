@@ -32,35 +32,35 @@
 
 ---
 
-## Day 6 (2026-02-25) — Block Storage
-1. ✅ **Amazon EBS**
-2. ✅ **Amazon EFS**
-3. ✅ **GCP Persistent Disk + Filestore**
+## Day 6 (2026-02-25) — Block Storage ✅
+1. ✅ Amazon EBS
+2. ✅ Amazon EFS
+3. ✅ GCP Persistent Disk + Filestore
 
 ---
 
-## Day 7 (2026-02-26)
-1. ✅ **Amazon FSx (Lustre, Windows, ONTAP)**
-2. ✅ **AWS Storage Gateway**
-3. ✅ **GCP NetApp Cloud Volumes**
+## Day 7 (2026-02-26) — Enterprise Storage ✅
+1. ✅ Amazon FSx (Lustre, Windows, ONTAP)
+2. ✅ AWS Storage Gateway
+3. ✅ GCP NetApp Cloud Volumes
 
 ---
 
-## Day 8 (2026-02-27) — Database
-1. ✅ **Amazon RDS**
-2. ✅ **Amazon Aurora**
-3. ✅ **GCP Cloud SQL + AlloyDB**
+## Day 8 (2026-02-27) — Database ✅
+1. ✅ Amazon RDS
+2. ✅ Amazon Aurora
+3. ✅ GCP Cloud SQL + AlloyDB
 
 ---
 
-## Day 9 (2026-02-28)
+## Day 9 (2026-02-28) — NoSQL & Cache
 1. **Amazon DynamoDB**
 2. **Amazon ElastiCache**
 3. **GCP Firestore + Memorystore**
 
 ---
 
-## Day 10 (2026-03-01)
+## Day 10 (2026-03-01) — Graph & Document
 1. **Amazon Neptune**
 2. **Amazon DocumentDB**
 3. **GCP Bigtable**
