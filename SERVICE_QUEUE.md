@@ -4,169 +4,168 @@
 
 ---
 
-## Day 2 (2025-02-21) ✅
+## Day 2 (2026-02-21) ✅
 1. ✅ AWS EC2 Auto Scaling
 2. ✅ AWS EC2 Spot Instances
 3. ✅ GCP Managed Instance Groups
 
 ---
 
-## Day 3 (2025-02-22) ✅
+## Day 3 (2026-02-22) ✅
 1. ✅ AWS Fargate (ECS/EKS)
 2. ✅ AWS Batch
 3. ✅ GCP Cloud Run
 
 ---
 
-## Day 4 (2025-02-23) ✅
+## Day 4 (2026-02-23) ✅
 1. ✅ AWS App Runner
 2. ✅ AWS Elastic Beanstalk
 3. ✅ GCP App Engine
 
 ---
 
-## Day 5 (2025-02-24) — Storage ✅
+## Day 5 (2026-02-24) — Storage ✅
 1. ✅ Amazon S3
 2. ✅ S3 Intelligent-Tiering
 3. ✅ GCP Cloud Storage
-9. GCP Cloud Storage
 
 ---
 
-## Day 6 (2025-02-25)
-10. Amazon EBS
-11. Amazon EFS
-12. GCP Persistent Disk + Filestore
+## Day 6 (2026-02-25) — Block Storage
+1. ✅ **Amazon EBS**
+2. ✅ **Amazon EFS**
+3. ✅ **GCP Persistent Disk + Filestore**
 
 ---
 
-## Day 7 (2025-02-26)
-13. Amazon FSx (Lustre, Windows, ONTAP)
-14. AWS Storage Gateway
-15. GCP NetApp Cloud Volumes
+## Day 7 (2026-02-26)
+1. ✅ **Amazon FSx (Lustre, Windows, ONTAP)**
+2. ✅ **AWS Storage Gateway**
+3. ✅ **GCP NetApp Cloud Volumes**
 
 ---
 
-## Day 8 (2025-02-27) — Database
-16. Amazon RDS
-17. Amazon Aurora
-18. GCP Cloud SQL + AlloyDB
+## Day 8 (2026-02-27) — Database
+1. ✅ **Amazon RDS**
+2. ✅ **Amazon Aurora**
+3. ✅ **GCP Cloud SQL + AlloyDB**
 
 ---
 
-## Day 9 (2025-02-28)
-19. Amazon DynamoDB
-20. Amazon ElastiCache
-21. GCP Firestore + Memorystore
+## Day 9 (2026-02-28)
+1. **Amazon DynamoDB**
+2. **Amazon ElastiCache**
+3. **GCP Firestore + Memorystore**
 
 ---
 
-## Day 10 (2025-03-01)
-22. Amazon Neptune
-23. Amazon DocumentDB
-24. GCP Bigtable
+## Day 10 (2026-03-01)
+1. **Amazon Neptune**
+2. **Amazon DocumentDB**
+3. **GCP Bigtable**
 
 ---
 
-## Day 11 (2025-03-02) — Networking
-25. Amazon VPC
-26. AWS Transit Gateway
-27. GCP VPC + Cloud Interconnect
+## Day 11 (2026-03-02) — Networking
+1. **Amazon VPC**
+2. **AWS Transit Gateway**
+3. **GCP VPC + Cloud Interconnect**
 
 ---
 
-## Day 12 (2025-03-03)
-28. ALB/NLB
-29. AWS CloudFront
-30. GCP Cloud Load Balancing + CDN
+## Day 12 (2026-03-03)
+1. **ALB/NLB**
+2. **AWS CloudFront**
+3. **GCP Cloud Load Balancing + CDN**
 
 ---
 
-## Day 13 (2025-03-04)
-31. AWS Global Accelerator
-32. AWS PrivateLink
-33. GCP Private Service Connect
+## Day 13 (2026-03-04)
+1. **AWS Global Accelerator**
+2. **AWS PrivateLink**
+3. **GCP Private Service Connect**
 
 ---
 
-## Day 14 (2025-03-05) — Security
-34. AWS IAM
-35. AWS KMS
-36. GCP IAM + Cloud KMS
+## Day 14 (2026-03-05) — Security
+1. **AWS IAM**
+2. **AWS KMS**
+3. **GCP IAM + Cloud KMS**
 
 ---
 
-## Day 15 (2025-03-06)
-37. AWS Secrets Manager
-38. AWS WAF
-39. GCP Secret Manager + Cloud Armor
+## Day 15 (2026-03-06)
+1. **AWS Secrets Manager**
+2. **AWS WAF**
+3. **GCP Secret Manager + Cloud Armor**
 
 ---
 
-## Day 16 (2025-03-07)
-40. AWS Shield
-41. Amazon GuardDuty
-42. GCP Cloud IDS + Security Command Center
+## Day 16 (2026-03-07)
+1. **AWS Shield**
+2. **Amazon GuardDuty**
+3. **GCP Cloud IDS + Security Command Center**
 
 ---
 
-## Day 17 (2025-03-08) — Integration
-43. Amazon SQS
-44. Amazon SNS
-45. GCP Pub/Sub
+## Day 17 (2026-03-08) — Integration
+1. **Amazon SQS**
+2. **Amazon SNS**
+3. **GCP Pub/Sub**
 
 ---
 
-## Day 18 (2025-03-09)
-46. Amazon EventBridge
-47. AWS Step Functions
-48. GCP Workflows + Eventarc
+## Day 18 (2026-03-09)
+1. **Amazon EventBridge**
+2. **AWS Step Functions**
+3. **GCP Workflows + Eventarc**
 
 ---
 
-## Day 19 (2025-03-10)
-49. AWS AppSync
-50. Amazon MQ
-51. GCP Apigee + API Gateway
+## Day 19 (2026-03-10)
+1. **AWS AppSync**
+2. **Amazon MQ**
+3. **GCP Apigee + API Gateway**
 
 ---
 
-## Day 20 (2025-03-11) — Analytics
-52. Amazon Athena
-53. Amazon EMR
-54. GCP BigQuery
+## Day 20 (2026-03-11) — Analytics
+1. **Amazon Athena**
+2. **Amazon EMR**
+3. **GCP BigQuery**
 
 ---
 
-## Day 21 (2025-03-12)
-55. AWS Glue
-56. Amazon Kinesis
-57. GCP Dataflow + Datastream
+## Day 21 (2026-03-12)
+1. **AWS Glue**
+2. **Amazon Kinesis**
+3. **GCP Dataflow + Datastream**
 
 ---
 
-## Day 22 (2025-03-13)
-58. Amazon MSK
-59. Amazon OpenSearch
-60. GCP Bigtable + Looker
+## Day 22 (2026-03-13)
+1. **Amazon MSK**
+2. **Amazon OpenSearch**
+3. **GCP Bigtable + Looker**
 
 ---
 
-## Day 23 (2025-03-14) — Machine Learning
-61. Amazon SageMaker
-62. Amazon Bedrock
-63. GCP Vertex AI
+## Day 23 (2026-03-14) — Machine Learning
+1. **Amazon SageMaker**
+2. **Amazon Bedrock**
+3. **GCP Vertex AI**
 
 ---
 
-## Day 24 (2025-03-15)
-64. Amazon Rekognition
-65. Amazon Polly
-66. GCP Vision API + Speech-to-Text
+## Day 24 (2026-03-15)
+1. **Amazon Rekognition**
+2. **Amazon Polly**
+3. **GCP Vision API + Speech-to-Text**
 
 ---
 
-## Day 25 (2025-03-16)
-67. Amazon Lex
-68. Amazon Personalize
-69. GCP Dialogflow + Recommendations AI
+## Day 25 (2026-03-16)
+1. **Amazon Lex**
+2. **Amazon Personalize**
+3. **GCP Dialogflow + Recommendations AI**
