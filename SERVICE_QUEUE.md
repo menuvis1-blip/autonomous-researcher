@@ -53,17 +53,17 @@
 
 ---
 
-## Day 9 (2026-02-28) — NoSQL & Cache
-1. **Amazon DynamoDB**
-2. **Amazon ElastiCache**
-3. **GCP Firestore + Memorystore**
+## Day 9 (2026-02-28) — NoSQL & Cache ✅
+1. ✅ Amazon DynamoDB
+2. ✅ Amazon ElastiCache
+3. ✅ GCP Firestore + Memorystore
 
 ---
 
 ## Day 10 (2026-03-01) — Graph & Document
-1. **Amazon Neptune**
-2. **Amazon DocumentDB**
-3. **GCP Bigtable**
+1. ✅ **Amazon Neptune**
+2. ✅ **Amazon DocumentDB**
+3. ✅ **GCP Bigtable**
 
 ---
 
