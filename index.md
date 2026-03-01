@@ -30,13 +30,10 @@ title: Home
               <h3>
                 <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
               </h3>
-              {%- if site.show_excerpts and post.excerpt -%}
-                <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-              {%- endif -%}
               <div class="post-meta-inline">
                 {%- if post.tags.size > 0 -%}
                   <span class="post-tags">
-                    {%- for tag in post.tags limit: 3 -%}
+                    {%- for tag in post.tags limit: 5 -%}
                       <span class="tag">{{ tag }}</span>
                     {%- endfor -%}
                   </span>
@@ -151,17 +148,11 @@ title: Home
   text-decoration: underline;
 }
 
-.post-excerpt {
-  color: #586069;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin: 0 0 1rem 0;
-}
-
 .post-meta-inline {
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-top: 0.75rem;
 }
 
 .post-tags {
