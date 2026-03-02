@@ -67,10 +67,10 @@
 
 ---
 
-## Day 11 (2026-03-02) — Networking
-1. **Amazon VPC**
-2. **AWS Transit Gateway**
-3. **GCP VPC + Cloud Interconnect**
+## Day 11 (2026-03-02) — Networking ✅
+1. ✅ Amazon VPC
+2. ✅ AWS Transit Gateway
+3. ✅ GCP VPC + Cloud Interconnect
 
 ---
 
