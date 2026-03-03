@@ -9,15 +9,14 @@ title: Home
   <p class="stats">{{ site.posts.size }} research posts published</p>
 </div>
 
-{%- assign sorted_posts = site.posts | sort: 'date' | reverse -%}
+{%- assign sorted_posts = site.posts | sort: 'date' -%}
 {%- assign posts_by_date = sorted_posts | group_by_exp: "post", "post.date | date: '%Y-%m-%d'" -%}
 
 {%- if posts_by_date.size > 0 -%}
   <div class="posts-container">
-    {%- assign total_days = posts_by_date.size -%}
     {%- for date_group in posts_by_date -%}
       {%- assign display_date = date_group.name | date: "%B %d, %Y" -%}
-      {%- assign day_number = total_days | minus: forloop.index0 -%}
+      {%- assign day_number = forloop.index -%}
       
       <div class="day-group">
         <div class="day-header">
