@@ -18,29 +18,7 @@ CloudFront is a fast content delivery network (CDN) service.
 
 ### Architecture
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                 CloudFront Distribution                      │
-│                                                              │
-│   User Request                                               │
-│        │                                                     │
-│        ↓                                                     │
-│   Edge Location (nearest)                                   │
-│        ├── Cache HIT → Return content                       │
-│        └── Cache MISS → Fetch from Origin                   │
-│                              │                               │
-│                    ┌─────────┴─────────┐                    │
-│                    ↓                   ↓                    │
-│                 S3 Origin        Custom Origin               │
-│                (static)          (ALB/EC2)                   │
-│                                                              │
-│   Features:                                                  │
-│   ├── 450+ edge locations                                   │
-│   ├── Lambda@Edge (compute at edge)                         │
-│   ├── Origin Shield (central cache)                         │
-│   └── Field-level encryption                                │
-└─────────────────────────────────────────────────────────────┘
-```
+![CloudFront Architecture](/autonomous-researcher/assets/diagrams/cloudfront-architecture.png)
 
 ### Key Features
 
