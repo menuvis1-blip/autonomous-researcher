@@ -9,14 +9,15 @@ title: Home
   <p class="stats">{{ site.posts.size }} research posts published</p>
 </div>
 
-{%- assign posts_by_date = site.posts | group_by_exp: "post", "post.date | date: '%Y-%m-%d'" -%}
+{%- assign sorted_posts = site.posts | sort: 'date' | reverse -%}
+{%- assign posts_by_date = sorted_posts | group_by_exp: "post", "post.date | date: '%Y-%m-%d'" -%}
 
 {%- if posts_by_date.size > 0 -%}
   <div class="posts-container">
+    {%- assign total_days = posts_by_date.size -%}
     {%- for date_group in posts_by_date -%}
-      {%- assign date_obj = date_group.name | date: "%Y-%m-%d" -%}
       {%- assign display_date = date_group.name | date: "%B %d, %Y" -%}
-      {%- assign day_number = forloop.index -%}
+      {%- assign day_number = total_days | minus: forloop.index0 -%}
       
       <div class="day-group">
         <div class="day-header">
@@ -43,7 +44,7 @@ title: Home
           {%- endfor -%}
         </div>
       </div>
-    {%- endfor -%  
+    {%- endfor -%}
   </div>
   
   <p class="rss-subscribe">Subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
