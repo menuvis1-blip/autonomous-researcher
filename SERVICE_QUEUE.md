@@ -74,10 +74,10 @@
 
 ---
 
-## Day 12 (2026-03-03)
-1. **ALB/NLB**
-2. **AWS CloudFront**
-3. **GCP Cloud Load Balancing + CDN**
+## Day 12 (2026-03-03) ✅
+1. ✅ ALB/NLB
+2. ✅ AWS CloudFront
+3. ✅ GCP Cloud Load Balancing + CDN
 
 ---
 
