@@ -10,13 +10,13 @@ title: Home
 </div>
 
 {%- assign sorted_posts = site.posts | sort: 'date' -%}
-{%- assign posts_by_date = sorted_posts | group_by_exp: "post", "post.date | date: '%Y-%m-%d'" -%}
+{%- assign posts_by_date = sorted_posts | group_by_exp: "post", "post.date | date: '%Y-%m-%d'" | reverse -%}
 
 {%- if posts_by_date.size > 0 -%}
   <div class="posts-container">
     {%- for date_group in posts_by_date -%}
       {%- assign display_date = date_group.name | date: "%B %d, %Y" -%}
-      {%- assign day_number = forloop.index -%}
+      {%- assign day_number = posts_by_date.size | minus: forloop.index0 -%}
       
       <div class="day-group">
         <div class="day-header">
