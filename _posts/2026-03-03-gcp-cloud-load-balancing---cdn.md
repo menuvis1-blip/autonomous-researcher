@@ -1,170 +1,128 @@
 ---
 layout: post
-title: "GCP VPC + Cloud Interconnect: Network Foundation"
+title: "GCP Cloud Load Balancing + CDN: Global Delivery"
 date: 2026-03-03 15:00:00 +0000
-categories: gcp architecture networking
-tags: [gcp, vpc, cloud-interconnect, networking, dedicated-connection]
+categories: gcp architecture networking cdn
+tags: [gcp, cloud-load-balancing, cdn, global, anycast]
 ---
 
 ## TL;DR
 
-GCP VPC is the networking foundation for Google Cloud. Unlike AWS VPC which is regional, GCP VPC is **global** — subnets in different regions automatically communicate without peering. Cloud Interconnect provides dedicated, private connections from on-premises to GCP (10 Gbps-100 Gbps). The global VPC is a game-changer for multi-region apps: no peering, no Transit Gateway, no complexity. The catch: Cloud Interconnect requires physical presence at colocation facilities, and Dedicated Interconnect needs 10 Gbps minimum.
+GCP Cloud Load Balancing is a globally distributed, Anycast-based load balancer — one IP address worldwide, automatic routing to nearest region. Cloud CDN integrates for edge caching. The killer feature: true global load balancing with automatic failover between regions. No separate multi-region setup needed like AWS. The catch: fewer edge locations than CloudFront (140 vs 450), and pricing can be higher for small workloads. For multi-region GCP apps, this is the gold standard.
 
 ---
 
 ## What Is It?
 
-### GCP VPC
+### Cloud Load Balancing
 
-Global virtual private cloud spanning all regions.
+Global load balancer with single Anycast IP.
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    Global GCP VPC                            │
+│           Global Load Balancer (Anycast IP)                  │
 │                                                              │
-│   ┌─────────────────────────────────────────────────────┐   │
-│   │                 us-central1                         │   │
-│   │              Subnet: 10.0.1.0/24                   │   │
-│   │                    │                                │   │
-│   │              VM instances                          │   │
-│   └────────────────────┬────────────────────────────────┘   │
-│                        │                                     │
-│                        │  Automatic global routing           │
-│                        │  (no peering needed)                │
-│                        ▼                                     │
-│   ┌─────────────────────────────────────────────────────┐   │
-│   │                 europe-west1                        │   │
-│   │              Subnet: 10.0.2.0/24                   │   │
-│   │                    │                                │   │
-│   │              VM instances                          │   │
-│   └─────────────────────────────────────────────────────┘   │
+│        130.211.20.1 (same IP everywhere)                    │
+│              │                                               │
+│   ┌─────────┼─────────┐                                     │
+│   │         │         │                                     │
+│   ↓         ↓         ↓                                     │
+│ us-central1 us-east1 europe-west1                          │
+│   │         │         │                                     │
+│   VMs       VMs       VMs                                   │
 │                                                              │
-│   Both subnets communicate automatically (same VPC)         │
+│   User in NYC → us-east1                                    │
+│   User in London → europe-west1                             │
+│   (Automatic, based on location)                            │
 └─────────────────────────────────────────────────────────────┘
 ```
 
-### Cloud Interconnect
+### Cloud CDN
 
-Dedicated private connection to GCP.
-
-| Type | Bandwidth | Use Case |
-|------|-----------|----------|
-| **Dedicated** | 10-100 Gbps | High throughput |
-| **Partner** | 50 Mbps-10 Gbps | Flexible, lower bandwidth |
+Edge caching integrated with load balancer.
 
 ---
 
 ## Pricing
 
-### VPC
-
 | Component | Price |
 |-----------|-------|
-| **VPC** | Free |
-| **Ingress** | Free |
-| **Egress (same region)** | Free |
-| **Egress (cross-region)** | $0.01-0.08/GB |
-
-### Cloud Interconnect
-
-| Type | Price |
-|------|-------|
-| **Dedicated (10 Gbps)** | $1,700-2,500/month |
-| **Partner** | Varies by provider |
-| **Egress** | Reduced rates |
+| **Forwarding rule** | $0.025/hour |
+| **Ingress data** | Free |
+| **Egress (CDN cache)** | $0.08-0.20/GB |
+| **Cache lookup** | $0.0075 per 10,000 |
 
 ---
 
-## AWS Alternative: VPC + Transit Gateway + Direct Connect
+## AWS Alternative: CloudFront + Global Accelerator
 
 | Feature | GCP | AWS |
 |---------|-----|-----|
-| **VPC scope** | Global | Regional |
-| **Cross-region** | Automatic | Transit Gateway |
-| **Dedicated connection** | Cloud Interconnect | Direct Connect |
-| **Pricing** | Simpler | More complex |
+| **Global LB** | Single LB | ALB + Global Accelerator |
+| **Edge locations** | 140 | 450 |
+| **Setup complexity** | Simple | Complex |
+| **Multi-region failover** | Automatic | Route53 health checks |
 
-**GCP advantage:** Global VPC eliminates peering complexity.
+**GCP advantage:** Simpler global setup.
+**AWS advantage:** More edge locations.
 
 ---
 
 ## Real-World Use Cases
 
-### Use Case 1: Multi-Region App
-
-**Challenge:** App spans US and Europe
-
-**GCP Solution:**
-```
-Single VPC
-├── us-central1 subnet
-├── europe-west1 subnet
-└── Automatic routing between them
-```
-
-**AWS Equivalent:**
-```
-us-east-1 VPC ←──Transit Gateway──→ eu-west-1 VPC
-                      ↑
-              Peering connections
-```
-
-### Use Case 2: Hybrid Cloud
+### Use Case 1: Multi-Region Web App
 
 ```
-On-Premises
-     │
-Cloud Interconnect (10 Gbps)
-     │
-GCP VPC (global)
-     ├── Compute Engine
-     ├── GKE
-     └── Cloud SQL
+Global LB → us-central1 (primary)
+         └── europe-west1 (standby)
+
+Failover: Automatic if primary unhealthy
+```
+
+### Use Case 2: Gaming Backend
+
+```
+Global LB + Cloud CDN
+├── Game assets cached worldwide
+├── Low-latency API responses
+└── Auto-scaling per region
 ```
 
 ---
 
 ## The Catch
 
-### 1. Interconnect Requirements
+### 1. Fewer Edge Locations
 
-**Dedicated:**
-- 10 Gbps minimum
-- Physical presence at colo
-- 24-48 hour provisioning
+140 vs CloudFront's 450:
+- Higher latency in some regions
+- Less cache hit rate
 
-**Partner:**
-- Depends on provider availability
+### 2. Pricing Complexity
 
-### 2. Egress Costs
+- Forwarding rules cost even with no traffic
+- Egress pricing varies by region
 
-Cross-region traffic adds up:
-- US to Europe: $0.05/GB
-- Large data transfers = $$$$
+### 3. GCP-Only
 
-### 3. Global VPC Limitations
-
-- Single failure domain
-- Blast radius consideration
-- Subnet IP ranges can't overlap
+- No multi-cloud portability
+- Lock-in to GCP ecosystem
 
 ---
 
 ## Verdict
 
-**Grade: A**
+**Grade: A-**
 
 **Best for:**
-- Multi-region applications
-- Global enterprises
-- Simplified networking
+- Multi-region GCP apps
+- Global load balancing
+- Simpler CDN setup
 
-**Standout feature:** Global VPC
-
-**When to choose GCP over AWS:**
-- Multi-region is primary requirement
-- Want simpler networking
-- Global presence
+**When to choose over AWS:**
+- Multi-region is requirement
+- GCP-native app
+- Want simpler setup
 
 ---
 
