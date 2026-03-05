@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "AWS IAM: Identity and Access Management"
-date: 2026-03-05 09:00:00 +0000
-categories: aws architecture security
-tags: [aws, iam, security, identity, access-management]
+title: "GCP IAM + Cloud KMS: Identity and Encryption"
+date: 2026-03-05 15:00:00 +0000
+categories: gcp architecture security
+tags: [gcp, iam, cloud-kms, security, identity, encryption]
 ---
 
 ## TL;DR
