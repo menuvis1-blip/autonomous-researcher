@@ -81,17 +81,17 @@
 
 ---
 
-## Day 13 (2026-03-04)
-1. **AWS Global Accelerator**
-2. **AWS PrivateLink**
-3. **GCP Private Service Connect**
+## Day 13 (2026-03-04) ✅
+1. ✅ AWS Global Accelerator
+2. ✅ AWS PrivateLink
+3. ✅ GCP Private Service Connect
 
 ---
 
-## Day 14 (2026-03-05) — Security
-1. **AWS IAM**
-2. **AWS KMS**
-3. **GCP IAM + Cloud KMS**
+## Day 14 (2026-03-05) — Security ✅
+1. ✅ AWS IAM
+2. ✅ AWS KMS
+3. ✅ GCP IAM + Cloud KMS
 
 ---
 
