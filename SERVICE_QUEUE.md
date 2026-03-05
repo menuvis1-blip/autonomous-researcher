@@ -60,7 +60,7 @@
 
 ---
 
-## Day 10 (2026-03-01) — Graph & Document
+## Day 10 (2026-03-01) ✅ — Graph & Document
 1. ✅ **Amazon Neptune**
 2. ✅ **Amazon DocumentDB**
 3. ✅ **GCP Bigtable**
@@ -95,10 +95,10 @@
 
 ---
 
-## Day 15 (2026-03-06)
-1. **AWS Secrets Manager**
-2. **AWS WAF**
-3. **GCP Secret Manager + Cloud Armor**
+## Day 15 (2026-03-06) ✅
+1. ✅ **AWS Secrets Manager**
+2. ✅ **AWS WAF**
+3. ✅ **GCP Secret Manager + Cloud Armor**
 
 ---
 
