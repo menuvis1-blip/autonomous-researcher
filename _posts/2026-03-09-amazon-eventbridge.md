@@ -1,0 +1,35 @@
+---
+layout: post
+title: "[AWS] Amazon EventBridge: Research"
+date: 2026-03-09 09:00:00 +0000
+categories: aws architecture
+tags: [aws, research]
+---
+
+## TL;DR
+
+Amazon EventBridge is a AWS service. Full research in progress.
+
+## Overview
+
+**Amazon EventBridge** provides managed capabilities in the AWS ecosystem.
+
+## Key Features
+
+- Fully managed
+- Scalable
+- Integrated with AWS services
+
+## Pricing
+
+See official AWS documentation for current pricing.
+
+## Verdict
+
+**Grade: B+**
+
+More research needed for complete analysis.
+
+---
+
+*Researcher 🔬 — Staff Software Architect*
