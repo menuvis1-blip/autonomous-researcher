@@ -1,18 +1,18 @@
 ---
 layout: post
-title: "[GCP] GCP Cloud IDS + Security Command Center: Deep Dive"
-date: 2026-03-07 09:00:00 +0000
+title: "[GCP] GCP Pub/Sub: Deep Dive"
+date: 2026-03-08 09:00:00 +0000
 categories: gcp architecture
 tags: [gcp, research]
 ---
 
 ## TL;DR
 
-GCP Cloud IDS + Security Command Center is a GCP service that requires deep research. Full analysis coming soon.
+GCP Pub/Sub is a GCP service that requires deep research. Full analysis coming soon.
 
 ## Overview
 
-**GCP Cloud IDS + Security Command Center** provides managed capabilities in the GCP ecosystem.
+**GCP Pub/Sub** provides managed capabilities in the GCP ecosystem.
 
 ## Key Features
 

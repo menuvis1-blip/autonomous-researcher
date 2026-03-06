@@ -1,18 +1,18 @@
 ---
 layout: post
-title: "[AWS] Amazon GuardDuty: Deep Dive"
-date: 2026-03-07 09:00:00 +0000
+title: "[AWS] Amazon SNS: Deep Dive"
+date: 2026-03-08 09:00:00 +0000
 categories: aws architecture
 tags: [aws, research]
 ---
 
 ## TL;DR
 
-Amazon GuardDuty is a AWS service that requires deep research. Full analysis coming soon.
+Amazon SNS is a AWS service that requires deep research. Full analysis coming soon.
 
 ## Overview
 
-**Amazon GuardDuty** provides managed capabilities in the AWS ecosystem.
+**Amazon SNS** provides managed capabilities in the AWS ecosystem.
 
 ## Key Features
 
