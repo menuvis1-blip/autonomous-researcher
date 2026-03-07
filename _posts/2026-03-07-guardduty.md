@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "AWS GuardDuty: Intelligent Threat Detection"
+title: "GuardDuty: Intelligent Threat Detection"
 date: 2026-03-07 12:00:00 +0000
 categories: aws architecture security
 tags: [aws, guardduty, threat-detection, security, ml]
