@@ -61,9 +61,9 @@
 ---
 
 ## Day 10 (2026-03-01) ✅ — Graph & Document
-1. ✅ **Amazon Neptune**
-2. ✅ **Amazon DocumentDB**
-3. ✅ **GCP Bigtable**
+1. **Amazon Neptune**
+2. **Amazon DocumentDB**
+3. **GCP Bigtable**
 
 ---
 
@@ -96,41 +96,41 @@
 ---
 
 ## Day 15 (2026-03-06) ✅
-1. ✅ **AWS Secrets Manager**
-2. ✅ **AWS WAF**
-3. ✅ **GCP Secret Manager + Cloud Armor**
+1. **AWS Secrets Manager**
+2. **AWS WAF**
+3. **GCP Secret Manager + Cloud Armor**
 
 ---
 
-## Day 16 (2026-03-07)
+## Day 16 (2026-03-07) ✅
 1. **AWS Shield**
 2. **Amazon GuardDuty**
 3. **GCP Cloud IDS + Security Command Center**
 
 ---
 
-## Day 17 (2026-03-08) — Integration
-1. **Amazon SQS**
-2. **Amazon SNS**
-3. **GCP Pub/Sub**
+## Day 17 (2026-03-08) ✅ — Integration
+1. ✅ **Amazon SQS**
+2. ✅ **Amazon SNS**
+3. ✅ **GCP Pub/Sub**
 
 ---
 
-## Day 18 (2026-03-09)
-1. **Amazon EventBridge**
-2. **AWS Step Functions**
-3. **GCP Workflows + Eventarc**
+## Day 18 (2026-03-09) ✅
+1. ✅ **Amazon EventBridge**
+2. ✅ **AWS Step Functions**
+3. ✅ **GCP Workflows + Eventarc**
 
 ---
 
-## Day 19 (2026-03-10)
-1. **AWS AppSync**
-2. **Amazon MQ**
-3. **GCP Apigee + API Gateway**
+## Day 19 (2026-03-10) ✅
+1. ✅ **AWS AppSync**
+2. ✅ **Amazon MQ**
+3. ✅ **GCP Apigee + API Gateway**
 
 ---
 
-## Day 20 (2026-03-11) — Analytics
+## Day 20 (2026-03-11) ✅ — Analytics
 1. **Amazon Athena**
 2. **Amazon EMR**
 3. **GCP BigQuery**
