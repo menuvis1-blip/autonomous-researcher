@@ -1,18 +1,18 @@
 ---
 layout: post
-title: "[GCP] GCP Dataflow + Datastream: Research"
-date: 2026-03-12 09:00:00 +0000
+title: "[GCP] GCP Vision API + Speech-to-Text: Research"
+date: 2026-03-15 09:00:00 +0000
 categories: gcp architecture
 tags: [gcp, research]
 ---
 
 ## TL;DR
 
-GCP Dataflow + Datastream is a GCP service. Full research in progress.
+GCP Vision API + Speech-to-Text is a GCP service. Full research in progress.
 
 ## Overview
 
-**GCP Dataflow + Datastream** provides managed capabilities in the GCP ecosystem.
+**GCP Vision API + Speech-to-Text** provides managed capabilities in the GCP ecosystem.
 
 ## Key Features
 

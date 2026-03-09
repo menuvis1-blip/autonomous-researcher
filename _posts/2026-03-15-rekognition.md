@@ -1,18 +1,18 @@
 ---
 layout: post
-title: "[AWS] Amazon Kinesis: Research"
-date: 2026-03-12 09:00:00 +0000
+title: "[AWS] Amazon Rekognition: Research"
+date: 2026-03-15 09:00:00 +0000
 categories: aws architecture
 tags: [aws, research]
 ---
 
 ## TL;DR
 
-Amazon Kinesis is a AWS service. Full research in progress.
+Amazon Rekognition is a AWS service. Full research in progress.
 
 ## Overview
 
-**Amazon Kinesis** provides managed capabilities in the AWS ecosystem.
+**Amazon Rekognition** provides managed capabilities in the AWS ecosystem.
 
 ## Key Features
 
