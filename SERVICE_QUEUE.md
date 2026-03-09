@@ -145,16 +145,16 @@
 ---
 
 ## Day 22 (2026-03-13)
-1. **Amazon MSK**
-2. **Amazon OpenSearch**
-3. **GCP Bigtable + Looker**
+1. ✅ **Amazon MSK**
+2. ✅ **Amazon OpenSearch**
+3. ✅ **GCP Bigtable + Looker**
 
 ---
 
-## Day 23 (2026-03-14) — Machine Learning
-1. **Amazon SageMaker**
-2. **Amazon Bedrock**
-3. **GCP Vertex AI**
+## Day 23 (2026-03-14) ✅ — Machine Learning
+1. ✅ **Amazon SageMaker**
+2. ✅ **Amazon Bedrock**
+3. ✅ **GCP Vertex AI**
 
 ---
 
