@@ -12,6 +12,9 @@ plugins:
   - jekyll-sitemap
   - jekyll-remote-theme
 
+# IMPORTANT: Publish future-dated posts
+future: true
+
 defaults:
   - scope:
       path: ""
