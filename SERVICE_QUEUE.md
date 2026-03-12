@@ -123,7 +123,7 @@
 
 ---
 
-## Day X (2026-03-10)
+## Day 21 (2026-03-10) ✅
 1. ✅ **AWS AppSync**
 2. ✅ **Amazon MQ**
 3. ✅ **GCP Apigee + API Gateway**
@@ -147,7 +147,7 @@
 ## Day 22 (2026-03-13)
 1. ✅ **Amazon MSK**
 2. ✅ **Amazon OpenSearch**
-3. ✅ **GCP Bigtable + Looker**
+3. **GCP Bigtable + Looker**
 
 ---
 
