@@ -123,7 +123,7 @@
 
 ---
 
-## Day 21 (2026-03-10) ✅
+## Day 21 (2026-03-10)
 1. ✅ **AWS AppSync**
 2. ✅ **Amazon MQ**
 3. ✅ **GCP Apigee + API Gateway**
@@ -131,16 +131,16 @@
 ---
 
 ## Day X (2026-03-11) — Analytics
-1. **Amazon Athena**
-2. **Amazon EMR**
-3. **GCP BigQuery**
+1. ✅ **Amazon Athena**
+2. ✅ **Amazon EMR**
+3. ✅ **GCP BigQuery**
 
 ---
 
 ## Day X (2026-03-12)
-1. ✅ **AWS Glue**
-2. ✅ **Amazon Kinesis**
-3. ✅ **GCP Dataflow + Datastream**
+1. **AWS Glue**
+2. **Amazon Kinesis**
+3. **GCP Dataflow + Datastream**
 
 ---
 
