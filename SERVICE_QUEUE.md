@@ -151,10 +151,10 @@
 
 ---
 
-## Day 23 (2026-03-14) ✅ — Machine Learning
-1. ✅ **Amazon SageMaker**
-2. ✅ **Amazon Bedrock**
-3. ✅ **GCP Vertex AI**
+## Day 23 (2026-03-14) — Machine Learning
+1. **Amazon SageMaker**
+2. **Amazon Bedrock**
+3. **GCP Vertex AI**
 
 ---
 
