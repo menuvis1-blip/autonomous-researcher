@@ -158,14 +158,14 @@
 
 ---
 
-## Day 24 (2026-03-15) ✅
+## Day X (2026-03-15)
 1. ✅ **Amazon Rekognition**
 2. ✅ **Amazon Polly**
 3. ✅ **GCP Vision API + Speech-to-Text**
 
 ---
 
-## Day 25 (2026-03-16)
-1. **Amazon Lex**
-2. **Amazon Personalize**
-3. **GCP Dialogflow + Recommendations AI**
+## Day 25 (2026-03-16) ✅
+1. ✅ **Amazon Lex**
+2. ✅ **Amazon Personalize**
+3. ✅ **GCP Dialogflow + Recommendations AI**
